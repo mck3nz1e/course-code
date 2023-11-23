@@ -17,7 +17,7 @@ jobs:
         steps:
             - name: View software version
               run: sw_vers
-              
+
     dependant-job:
         runs-on: windows-latest
         needs: run-shell-commands
@@ -25,5 +25,5 @@ jobs:
             - name: echo a string
               run: Write-Output "Windows String"
             - name: Error Step
-              run: doesnotexist
+              run: doesnotexistt
               
