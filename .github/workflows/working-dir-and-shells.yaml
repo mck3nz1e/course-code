@@ -36,4 +36,4 @@ jobs:
               shell: python
               run: |
                 import platform
-                print(platform.proicessor())
+                print(platform.processor())
