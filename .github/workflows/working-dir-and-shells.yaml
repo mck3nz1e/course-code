@@ -27,7 +27,7 @@ jobs:
         steps: 
             - name: Display Working Directory & List Files
               run: |
-                Get-Loaction
+                Get-Location
                 dir
                 $env:GITHUB_SHA
                 $env:GITHUB_REPOSITORY
