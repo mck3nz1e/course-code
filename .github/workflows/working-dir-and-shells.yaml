@@ -23,7 +23,7 @@ jobs:
         runs-on: windows-latest
         defaults:
             run:
-                shell: pwh
+                shell: pwsh
         steps: 
             - name: Display Working Directory & List Files
               run: |
