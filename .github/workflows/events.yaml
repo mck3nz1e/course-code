@@ -1,6 +1,20 @@
 name: Repository Events
 on: 
-    push:
+    push: # all must match for a workflow to run
+
+        branches:
+            - main
+            - "feature/*" # matches feature/featA etc
+            - "!feature/featB" # ignores this branch
+
+        tags:
+            - v1.* # matches v1.1 etc
+            - "!2.1" # ignores tags
+
+        paths:
+            - "**.js" # matches path
+            - "!app.js" # ignores path
+        
     pull_request:
         types: [opened, assigned, reopened, synchronize]
     issues: 
