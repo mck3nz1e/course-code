@@ -1,7 +1,6 @@
 name: Stale Issues & PRs
 on:
     schedule:
-        - cron: "0 14 * * *"
         - cron: "0/5 * * * *" # just for testing every 5 mins
 
 jobs:
