@@ -7,19 +7,25 @@ jobs:
         steps:
             - name: Step 1
               run: sleep 20
-            - name: Fail
+
+            - name: Step 2
+              id: step-2
               run: exit 1
+
             - name: Runs on failure
-              if: failure()
-              run: echco 'Runs only on failure'
+              if: failure() && steps.step-2.conclusion == 'failure'
+              run: echco 'Step 2 has failed'
+
             - name: Runs on success
             # This is not needed (DEFAULT BEHAVIOUR)
               if: success()
               run: echo 'Runs on success'
+
             - name: Always Runs
              # if: success() || failure()
               if: always()
               run: echo 'Always Runs'
+              
             - name: Runs When Cancelled
               if: cancelled()
               run: echo 'Runs on cancelled'
