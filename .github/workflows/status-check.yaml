@@ -12,9 +12,13 @@ jobs:
               id: step-2
               run: exit 1
 
-            - name: Runs on failure
+            - name: Runs on step 2 failure
               if: failure() && steps.step-2.conclusion == 'failure'
               run: echco 'Step 2 has failed'
+
+            - name: Runs on failure
+              if: failure()
+              run: echco 'Failure'
 
             - name: Runs on success
             # This is not needed (DEFAULT BEHAVIOUR)
