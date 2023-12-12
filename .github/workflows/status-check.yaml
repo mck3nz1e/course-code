@@ -14,11 +14,11 @@ jobs:
 
             - name: Runs on step 2 failure
               if: failure() && steps.step-2.conclusion == 'failure'
-              run: echco 'Step 2 has failed'
+              run: echo 'Step 2 has failed'
 
             - name: Runs on failure
               if: failure()
-              run: echco 'Failure'
+              run: echo 'Failure'
 
             - name: Runs on success
             # This is not needed (DEFAULT BEHAVIOUR)
