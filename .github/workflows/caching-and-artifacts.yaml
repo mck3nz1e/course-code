@@ -41,7 +41,7 @@ jobs:
                 path: code-coverage-report
             - run: ls -a
             - run: ls -a
-                working-directory
+              working-directory: code-coverage-report
 
             - name: Use Axios
               uses: actions/github-script@v6
