@@ -22,6 +22,9 @@ jobs:
                 node -v
                 cat /etc/os-release
 
+            - name: Create a file
+              run: echo 'Some text' > text.txt
+
             - name: Log Env
               run: echo $API_URL
 
@@ -35,3 +38,9 @@ jobs:
               uses: docker://node:18.16-alpine3.17
               with: 
                 args: -v
+
+            - name: Show file contents
+              uses: docker://node:18.16-alpine3.17
+              with: 
+                entrypoint: cat
+                args: text.txt
