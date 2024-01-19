@@ -14,3 +14,10 @@ jobs:
         steps:
             - run: echo "date=$(date)" >> $GITHUB_OUTPUT
               id: date-step
+
+    nested-workflow-call:
+        uses: mck3nz1e/My-First-API/.github/workflows/reusable.yaml@master
+        with: 
+            name: 'Scott'
+        secrets:
+            access-token: ${{secrets.ACCESS_TOKEN}}
