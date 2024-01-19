@@ -1,0 +1,17 @@
+name: Calling Reusable Workflow
+on:
+    workflow_dispatch:
+        inputs:
+            name:
+                description: 'Input description'
+                type: string
+                default: 'Scott'
+                required: false
+
+jobs:
+    calling-a-reusable-workflow:
+        uses: mck3nz1e/My-First-API/.github/workflows/reusable.yaml@master
+        with: 
+            name: '${{ inputs.name }}'
+        secrets:
+            access-token: ${{secrets.ACCESS_TOKEN}}
