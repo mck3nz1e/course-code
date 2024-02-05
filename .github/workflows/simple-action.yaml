@@ -7,8 +7,9 @@ jobs:
         steps:
             - uses: actions/checkout@v3
 
-            - name: Simple JS Action
+            - name: Simple JS / Docker Action
               id: greet
+              # uses: ./.github/actions/hello
               uses: ./.github/actions/hello
               with: 
                 who_to_greet: Scott
@@ -18,4 +19,3 @@ jobs:
 
             - name: Log ENV var
               run: echo $HELLO_TIME
-              
