@@ -13,7 +13,7 @@ jobs:
               with:
                 slack_username: Scott
                 upload_joke: true
-                sclack_webhook: ${{ secrets.SLACK_WEBHOOK }}
+                slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
 
             - name: Displaying Joke Output
               run: echo '${{ steps.slack-joke.outputs.joke }}'
