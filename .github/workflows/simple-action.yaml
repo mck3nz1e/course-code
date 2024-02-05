@@ -15,6 +15,7 @@ jobs:
 
             - name: Log greeting Time
               run: echo "${{steps.greet.outputs.time}}"
-              
+
             - name: Log ENV var
               run: echo $HELLO_TIME
+              
