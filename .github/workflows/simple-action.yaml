@@ -7,15 +7,27 @@ jobs:
         steps:
             - uses: actions/checkout@v3
 
-            - name: Simple JS / Docker Action
-              id: greet
+            - name: Send a joke on Slack
+              uses: ./.github/actions/slack-joke
+              id: slack-joke
+              with:
+                slack_username: Scott
+                upload_joke: true
+                sclack_webhook: ${{ secrets.SLACK_WEBHOOK }}
+
+            - name: Displaying Joke Output
+              run: echo '${{ steps.slack-joke.outputs.joke }}'
+
+
+           # - name: Simple JS / Docker Action
+            #  id: greet
               # uses: ./.github/actions/hello
-              uses: ./.github/actions/hello-docker
-              with: 
-                who_to_greet: Scott
+             # uses: ./.github/actions/hello-docker
+             # with: 
+             #   who_to_greet: Scott
 
-            - name: Log greeting Time
-              run: echo "${{steps.greet.outputs.time}}"
+          # - name: Log greeting Time
+          #    run: echo "${{steps.greet.outputs.time}}"
 
-            - name: Log ENV var
-              run: echo $HELLO_TIME
+           # - name: Log ENV var
+          #    run: echo $HELLO_TIME
