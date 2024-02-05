@@ -10,7 +10,7 @@ jobs:
             - name: Simple JS / Docker Action
               id: greet
               # uses: ./.github/actions/hello
-              uses: ./.github/actions/hello
+              uses: ./.github/actions/hello-docker
               with: 
                 who_to_greet: Scott
 
